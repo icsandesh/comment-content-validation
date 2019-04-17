@@ -19,9 +19,9 @@ public class CommonUtils {
         return Base64.getEncoder().encodeToString(token.getBytes());
     }
 
-    public static void main(String[] args) {
-        System.out.println(getBasicAuthorizationToken("admin", "admin"));
-    }
 
+    public static boolean isWordsFound(String content, List<String> words) {
+        return words.stream().anyMatch(w -> (content.toLowerCase().contains(w.toLowerCase())));
+    }
 
 }

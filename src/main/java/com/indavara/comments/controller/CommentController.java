@@ -4,6 +4,7 @@ import com.indavara.comments.model.Comment;
 import com.indavara.comments.model.CommentFeedBack;
 import com.indavara.comments.service.CommentService;
 import io.swagger.annotations.Api;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 
+@Slf4j
 @RestController
 @Api(value = "Product Comments API", description = "Crud operations of Product Comments.")
 public class CommentController {
@@ -28,9 +30,10 @@ public class CommentController {
 
 
     @RequestMapping(value = "v1/comments", method = POST, produces = APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<String> createContact(@RequestBody @Valid Comment comment) {
-        String contactId = commentService.createComment(comment);
-        return new ResponseEntity<>(contactId, HttpStatus.CREATED);
+    public ResponseEntity<String> createComment(@RequestBody @Valid Comment comment) {
+        String commentID = commentService.createComment(comment);
+        log.info("Comment Created with commentID: {}", commentID);
+        return new ResponseEntity<>(commentID, HttpStatus.CREATED);
     }
 
     @RequestMapping(value = "v1/comments/{commentId}", method = GET, produces = APPLICATION_JSON_UTF8_VALUE)

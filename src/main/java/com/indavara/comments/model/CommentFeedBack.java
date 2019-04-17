@@ -3,6 +3,7 @@ package com.indavara.comments.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -11,7 +12,7 @@ public class CommentFeedBack {
 
     private double objectionScore;
 
-    private List<String> objectionFeedback;
+    private List<String> objectionFeedback = new ArrayList<>();
 
     public CommentFeedBack(double avgObjectionScore, List<String> objectionFeedback) {
         this.objectionScore = avgObjectionScore;
