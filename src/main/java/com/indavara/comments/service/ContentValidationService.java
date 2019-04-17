@@ -18,7 +18,7 @@ public class ContentValidationService {
         int totalObjectionScore = 0;
         List<String> objectionFeedback = new ArrayList<>();
         for (ContentValidator contentValidator : contentValidators) {
-            CommentFeedBack commentFeedBack = contentValidator.validateContent(content);
+            CommentFeedBack commentFeedBack = contentValidator.validateContent(content.toLowerCase());
             totalObjectionScore += commentFeedBack.getObjectionScore();
             objectionFeedback.addAll(commentFeedBack.getObjectionFeedback());
         }

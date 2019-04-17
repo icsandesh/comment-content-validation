@@ -28,8 +28,8 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "Contact Book API",
-                "Crud operations of contacts",
+                "Product Comment API",
+                "Crud operations of Product Comment",
                 "1",
                 "Terms of service",
                 new Contact("Sandesh Gowda", "www.linkedin.com/in/icsandesh/", "icsandesh@gmail.com"),

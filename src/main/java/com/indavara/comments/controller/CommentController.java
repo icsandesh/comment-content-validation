@@ -19,7 +19,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 
 @RestController
-@Api(value = "Contact book API", description = "Crud operations on Comments.")
+@Api(value = "Product Comments API", description = "Crud operations of Product Comments.")
 public class CommentController {
 
 
